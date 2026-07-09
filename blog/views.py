@@ -1,8 +1,9 @@
 # blog/views.py
 from django.shortcuts import render
-# 1. Add the HttpResponse import
-from django.http import HttpResponse
+from django.views import generic
+from .models import Post
 
-# 2. Add the function to return the text string
-def blog_index(request):
-    return HttpResponse("Hello, blog!")
+# Create your views here.
+class PostList(generic.ListView):
+    queryset = Post.objects.all()
+    template_name = "post_list.html"
