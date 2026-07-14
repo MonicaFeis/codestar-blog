@@ -14,14 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# codestar/urls.py
 from django.contrib import admin
-from django.urls import path
-# 1. Import the appropriate views file from your blog app
-from blog import views as blog_views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 2. Add the new path 'blog/' into the urlpatterns
-    path('blog/', blog_views.blog_index, name='blog_index'),
+    path('summernote/', include('django_summernote.urls')),
+    path('', include('blog.urls')),  # <-- This points to blog.urls
 ]

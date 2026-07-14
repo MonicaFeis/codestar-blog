@@ -1,7 +1,9 @@
-from django.contrib import admin
-from django.urls import path, include
+# blog/urls.py
+from django.urls import path
+from . import views  # Make sure your views are imported
 
 urlpatterns = [
-    path("blog/", include("blog.urls"), name="blog-urls"),
-    path('admin/', admin.site.urls),
+    # ⚠️ DO NOT use include("blog.urls") here!
+    # Map directly to your views instead:
+    path("", views.PostList.as_view(), name="home"), 
 ]
