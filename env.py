@@ -10,3 +10,8 @@ os.environ.setdefault(
 # Add your secret key here for local use
 os.environ.setdefault("SECRET_KEY", "django-insecure-6q)l($0s&72dy-shu95r&p#*j4ye7lz1xhy$^409iut*(lihs%")
 
+# Cloudinary settings
+os.environ.setdefault(
+    "CLOUDINARY_URL", "cloudinary://955859581726131:yMmG5CSEvrDEpshWzMNw9b2UM98@yyv7utlw"
+)
+
